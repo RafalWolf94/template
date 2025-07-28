@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Czesc</title>
+    <style>
+        .button {
+            width: 60%;
+            height: 40px;
+            border: none;
+            border-radius: 0.5rem;
+            background-color: #b7f154;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #333333;
+        }
+
+        .button:hover {
+            background-color: #9ddf2e;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
+<div class="container">
+    <h2 style="color: #333;">Hello {{TutorName}} 👋</h2>
+    <p>Dzięki Tobie {{AppUserFullName}} dołaczył/a do naszego portalu!</p>
+
+    <p> W ramach naszej wdzięcznści otrzymuje +100 pkt. do wykorzystania na przyszłe ulepszenia portalu!</p>
+    <p>If you have any questions, feel free to reach out to us at any time.</p>
+    <hr>
+    <p style="font-size: 12px; color: #999;">&copy; 2025 Calypso Inc. All rights reserved.</p>
+</div>
+</body>
+</html>

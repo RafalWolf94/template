@@ -1,0 +1,64 @@
+services:
+  web-api:
+    build:
+      context: .
+      dockerfile: api/Web.Api/Dockerfile
+    container_name: web-api
+    ports:
+      - "8080:80"
+    environment:
+      ASPNETCORE_URLS: http://+:80
+      ASPNETCORE_ENVIRONMENT: Production
+      Logging__Console__LogLevel__Default: "Information"
+      Logging__Console__FormatterName: "json"
+    volumes:
+      - /home/ubuntu/filestorage:/app/storage
+    depends_on:
+      - postgres
+      - redis
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      custom_net:
+        ipv4_address: 129.0.0.1
+  
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      TZ: Europe/Warsaw
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      custom_net:
+        ipv4_address: 129.0.0.2
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    command: [ "redis-server", "--requirepass", "a8Jn3a_kja799J2719asmc_621bnk_7a_" ]
+    networks:
+      custom_net:
+        ipv4_address: 129.0.0.3
+
+volumes:
+  postgres_data:
+
+networks:
+  custom_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 129.0.0.0/16
