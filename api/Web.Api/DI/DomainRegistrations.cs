@@ -50,7 +50,7 @@ public static class DomainRegistrations
     private static void AddQueries(this IServiceCollection services)
     {
         services
-            .AddScoped<IQueryHandler<GetAppUser.Query, GetAppUser.Data>, AppUserQueries>();
+            .AddScoped<IQueryHandler<GetAccount.Query, GetAccount.Data>, AccountQueries>();
     }
 
     private static void AddRedis(this IServiceCollection services, IConfiguration configuration)

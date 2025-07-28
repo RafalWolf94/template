@@ -9,15 +9,25 @@
 
     <ItemGroup>
         <Reference Include="Microsoft.AspNetCore.Routing">
-            <HintPath>..\..\..\.dotnet\packs\Microsoft.AspNetCore.App.Ref\8.0.7\ref\net8.0\Microsoft.AspNetCore.Routing.dll</HintPath>
+            <HintPath>
+                ..\..\..\.dotnet\packs\Microsoft.AspNetCore.App.Ref\8.0.7\ref\net8.0\Microsoft.AspNetCore.Routing.dll</HintPath>
         </Reference>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.1" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Web.Adapters.Out\Web.Adapters.Out.csproj" />
-      <ProjectReference Include="..\Web.UseCases\Web.UseCases.csproj" />
+        <Using Include="Microsoft.AspNetCore.Builder" />
+        <Using Include="Microsoft.AspNetCore.Http" />
+        <Using Include="Microsoft.AspNetCore.Http.HttpResults" />
+        <Using Include="Microsoft.AspNetCore.Mvc" />
+        <Using Include="Microsoft.AspNetCore.Routing" />
+        <Using Include="Web.UseCases.TechnicalStuff.Cqrs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Web.Adapters.Out\Web.Adapters.Out.csproj" />
+        <ProjectReference Include="..\Web.UseCases\Web.UseCases.csproj" />
     </ItemGroup>
 
 </Project>

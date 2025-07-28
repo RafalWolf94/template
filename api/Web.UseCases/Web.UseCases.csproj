@@ -19,6 +19,11 @@
             <HintPath>..\..\..\.dotnet\packs\Microsoft.AspNetCore.App.Ref\8.0.7\ref\net8.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
         </Reference>
     </ItemGroup>
+
+         <ItemGroup>
+        <Using Include="JetBrains.Annotations" />
+        <Using Include="Web.UseCases.TechnicalStuff.Cqrs" />
+    </ItemGroup>
     <ItemGroup>
         <Reference Include="Microsoft.Extensions.Logging.Abstractions">
             <HintPath>..\..\..\.dotnet\packs\Microsoft.AspNetCore.App.Ref\8.0.7\ref\net8.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>

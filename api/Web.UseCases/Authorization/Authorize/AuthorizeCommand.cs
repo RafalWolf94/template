@@ -1,6 +1,3 @@
-using JetBrains.Annotations;
-using Web.UseCases.TechnicalStuff.Cqrs;
-
 namespace Web.UseCases.Authorization.Authorize;
 
 [PublicAPI]

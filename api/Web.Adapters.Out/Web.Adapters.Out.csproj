@@ -12,6 +12,11 @@
         <PackageReference Include="P3Model.Annotations" Version="0.4.0"/>
     </ItemGroup>
     
+     <ItemGroup>
+        <Using Include="JetBrains.Annotations" />
+        <Using Include="Web.UseCases.TechnicalStuff.Cqrs" />
+    </ItemGroup>
+
     <ItemGroup>
       <ProjectReference Include="..\Web.Domain\Web.Domain.csproj" />
       <ProjectReference Include="..\Web.Infrastructure\Web.Infrastructure.csproj" />

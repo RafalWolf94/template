@@ -1,10 +1,7 @@
-using JetBrains.Annotations;
-using Web.UseCases.TechnicalStuff.Cqrs;
-
 namespace Web.Adapters.Out.AppUsers.Get;
 
 [PublicAPI]
-public sealed record GetAppUser
+public sealed record GetAccount
 {
     public record Query : IQuery;
 
